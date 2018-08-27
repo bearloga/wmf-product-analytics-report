@@ -1,0 +1,5 @@
+name: Product Analytics Report
+description: >
+  Wikimedia Foundation Product Analytics-branded R Markdown template
+  (based on the 'memor' template) for making beautiful PDF reports.
+create_dir: false

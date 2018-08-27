@@ -1,3 +1,3 @@
-.onLoad <- function(...) {
-  message("See ?wmfpar for helpful usage information.")
+.onAttach <- function(...) {
+  packageStartupMessage("See ?wmfpar for helpful usage information.")
 }

@@ -1,0 +1,37 @@
+---
+title: Long title
+subtitle: Subtitle
+author: 
+  - Your Name
+  - Your Co-author's Name
+date: "`r sub('^0(\\d)', '\\1', format(Sys.Date(), '%d %B %Y'))`"
+abstract: |
+  Executive summary
+output:
+  wmfpar::pdf_report:
+    cite_r_packages:
+      - kableExtra
+nocite: "@*"
+---
+
+```{r setup, include=FALSE}
+library(knitr); library(kableExtra)
+opts_chunk$set(
+  echo = FALSE, message = FALSE, warning = FALSE,
+  dev = "png", dpi = 600
+)
+options(knitr.table.format = "latex")
+```
+
+# Example
+
+Here is a table:
+
+```{r}
+kable(mtcars[1:5, 1:5], booktabs = TRUE, caption = "a table") %>%
+  kable_styling(latex_options = c("striped", "HOLD_position"))
+```
+
+# References
+
+\footnotesize

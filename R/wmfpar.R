@@ -5,8 +5,8 @@
 #'   team within
 #'   [Wikimedia Audiences](https://www.mediawiki.org/wiki/Wikimedia_Audiences)
 #'   department.
-#' @details To be consistent with the documents put out by the Foundation, it's
-#'   strongly recommended to install and use the following fonts:
+#' @details To be consistent with the documents put out by the Foundation, this
+#'   template requires the following fonts to be available in the system:
 #'   - (Bold) [Montserrat](https://fonts.google.com/specimen/Montserrat) for
 #'     header text.
 #'   - [Source Serif Pro](https://fonts.google.com/specimen/Source+Serif+Pro)
@@ -32,5 +32,5 @@
 #'   for more information.
 #' @aliases wmfpar
 #' @docType package
-#' @name wmf-product-analytics-report-package
+#' @name wmfpar-package
 NULL
