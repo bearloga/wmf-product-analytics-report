@@ -19,7 +19,14 @@
 pdf_report <- function(font_size = "12pt", page_margins = "1in",
                        short_title = NULL, watermark = NULL,
                        cite_r_packages = NULL, extra_bibs = NULL,
-                       toc = FALSE, lot = FALSE, lof = FALSE) {
+                       toc = FALSE, lot = FALSE, lof = FALSE, ...) {
+
+  args <- list(...)
+  if ("includes" %in% names(args)) {
+    if (!"in_header" %in% names(args$includes)) args$includes$in_header <- list(NULL)
+    if (!"before_body" %in% names(args$includes)) args$includes$before_body <- list(NULL)
+    if (!"after_body" %in% names(args$includes)) args$includes$after_body <- list(NULL)
+  }
 
   cite_r_packages <- union(c("base", "rmarkdown", "knitr", "memor", "wmfpar"), cite_r_packages)
   r_packages_bib <- tempfile("wmfpar_rpkgs_", fileext = ".bib")
@@ -33,9 +40,14 @@ pdf_report <- function(font_size = "12pt", page_margins = "1in",
     pandoc_variable_arg("geometry", paste0("margin=", page_margins)),
     pandoc_variable_arg("subparagraph"),
     pandoc_variable_arg("mainfont", "Source Serif Pro"),
-    rmarkdown::pandoc_include_args(in_header = list(
-      system.file("rmarkdown/templates/wmfpar/resources/preamble.tex", package = "wmfpar")
-    ))
+    rmarkdown::pandoc_include_args(
+      in_header = unlist(c(
+        system.file("rmarkdown/templates/wmfpar/resources/preamble.tex", package = "wmfpar"),
+        args$includes$in_header
+      )),
+      before_body = unlist(args$includes$before_body),
+      after_body = unlist(args$includes$after_body)
+    )
   )
 
   wmf_logo <- system.file(
