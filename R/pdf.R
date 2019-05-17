@@ -30,7 +30,7 @@ pdf_report <- function(font_size = "12pt", page_margins = "1in",
 
   cite_r_packages <- union(c("base", "rmarkdown", "knitr", "memor", "wmfpar"), cite_r_packages)
   r_packages_bib <- tempfile("wmfpar_rpkgs_", fileext = ".bib")
-  bibtex::write.bib(cite_r_packages, r_packages_bib)
+  knitr::write_bib(cite_r_packages, r_packages_bib)
   if (!is.null(extra_bibs)) {
      for (extra_bib in extra_bibs) file.append(r_packages_bib, extra_bib)
   }
