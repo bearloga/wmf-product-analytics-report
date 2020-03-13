@@ -20,14 +20,14 @@ A report template, based on [memor](https://hebrewseniorlife.github.io/memor/) t
 ## Installation
 
 ```R
-# install.packages("devtools")
-devtools::install_github("bearloga/wmf-product-analytics-report")
+# install.packages("remotes")
+remotes::install_github("bearloga/wmf-product-analytics-report")
 ```
 
 Although I recommend using this command instead:
 
 ```R
-devtools::install_github("bearloga/wmf-product-analytics-report", dependencies = "Suggests")
+remotes::install_github("bearloga/wmf-product-analytics-report", dependencies = "Suggests")
 ```
 
 ## Usage
