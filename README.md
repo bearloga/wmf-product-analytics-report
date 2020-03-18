@@ -10,11 +10,12 @@ A report template, based on [memor](https://hebrewseniorlife.github.io/memor/) t
 ## Prerequisites
 
 - **Fonts**
-  - xelatex engine, most easily installed with [tinytex](https://yihui.name/tinytex/) R package
+  - xelatex engine
+    - most easily installed with [tinytex](https://yihui.name/tinytex/) R package: `tinytex::install_tinytex()`
   - [Montserrat](https://fonts.google.com/specimen/Montserrat) (Bold) for header text
   - [Source Serif Pro](https://fonts.google.com/specimen/Source+Serif+Pro) for body text
 - [Pandoc](https://pandoc.org/)
-  - included with [RStudio](https://www.rstudio.com/products/rstudio/)
+  - bundled with [RStudio](https://www.rstudio.com/products/rstudio/)
   - if installing separately (i.e. via Homebrew), install `pandoc-citeproc` too
 
 ## Installation
