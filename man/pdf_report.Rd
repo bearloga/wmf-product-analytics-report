@@ -4,9 +4,18 @@
 \alias{pdf_report}
 \title{WMF Product Analytics PDF Report}
 \usage{
-pdf_report(font_size = "12pt", page_margins = "1in",
-  short_title = NULL, watermark = NULL, cite_r_packages = NULL,
-  extra_bibs = NULL, toc = FALSE, lot = FALSE, lof = FALSE, ...)
+pdf_report(
+  font_size = "12pt",
+  page_margins = "1in",
+  short_title = NULL,
+  watermark = NULL,
+  cite_r_packages = NULL,
+  extra_bibs = NULL,
+  toc = FALSE,
+  lot = FALSE,
+  lof = FALSE,
+  ...
+)
 }
 \arguments{
 \item{font_size}{base font size to typeset the document in (12pt default)}
